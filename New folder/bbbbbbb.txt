@@ -1,0 +1,33 @@
+@FXML
+    void click(MouseEvent event) {
+		t.setText( " x : " + event.getSceneX() + " y " + event.getSceneY());
+
+    }
+
+
+
+
+
+
+
+public  void initalizeMap() {
+		for (int i = 0; i < vList.size(); i++) {
+			Circle c = new Circle(5);
+			c.setCenterX(vList.get(i).getX() +100);
+			c.setCenterY(vList.get(i).getY());
+			c.setFill(Color.GREEN);
+			Tooltip tooltip = new Tooltip(vList.get(i).toString());
+			tooltip.setAutoFix(true);
+			Tooltip.install(
+				    c,
+				    tooltip
+				);
+			vList.get(i).c = c;
+
+			pane.getChildren().add(vList.get(i).c);
+
+		}
+	}
+
+
+

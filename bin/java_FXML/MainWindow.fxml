@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="668.0" prefWidth="777.0" style="-fx-background-color: dimgray;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+	<top>
+		<MenuBar BorderPane.alignment="CENTER">
+			<menus>
+				<Menu mnemonicParsing="false" text="File">
+					<items>
+						<MenuItem mnemonicParsing="false" onAction="#close" text="Close" />
+					</items>
+				</Menu>
+				<Menu mnemonicParsing="false" text="Help">
+					<items>
+						<MenuItem mnemonicParsing="false" onAction="#help" text="About" />
+					</items>
+				</Menu>
+			</menus>
+		</MenuBar>
+	</top>
+	<right>
+		<AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: lightgray;" BorderPane.alignment="CENTER">
+			<children>
+				<Label alignment="CENTER" layoutX="12.0" layoutY="22.0" prefHeight="30.0" prefWidth="64.0" text="Source : ">
+					<font>
+						<Font name="System Bold" size="15.0" />
+					</font>
+				</Label>
+				<ChoiceBox fx:id="source" layoutX="71.0" layoutY="25.0" prefHeight="25.0" prefWidth="122.0" />
+				<Label alignment="CENTER" layoutX="12.0" layoutY="63.0" prefHeight="30.0" prefWidth="61.0" text="Target : ">
+					<font>
+						<Font name="System Bold" size="15.0" />
+					</font>
+				</Label>
+				<ChoiceBox fx:id="target" layoutX="71.0" layoutY="66.0" prefHeight="25.0" prefWidth="122.0" />
+				<Button layoutX="69.0" layoutY="131.0" mnemonicParsing="false" onAction="#run" prefHeight="25.0" prefWidth="63.0" style="-fx-border-color: red; -fx-border-radius: 50;" text="Run">
+					<font>
+						<Font name="System Bold" size="15.0" />
+					</font>
+				</Button>
+				<Separator layoutX="19.0" layoutY="195.0" prefHeight="4.0" prefWidth="170.0" />
+				<Label layoutX="15.0" layoutY="220.0" prefHeight="30.0" prefWidth="62.0" text="Path : ">
+					<font>
+						<Font name="System Bold" size="15.0" />
+					</font>
+				</Label>
+            <AnchorPane layoutX="7.0" layoutY="260.0" prefHeight="219.0" prefWidth="184.0">
+               <children>
+                  <ListView fx:id="pathListView" prefHeight="219.0" prefWidth="184.0" />
+               </children>
+            </AnchorPane>
+				<Label layoutX="12.0" layoutY="490.0" prefHeight="30.0" prefWidth="129.0" text="Total Distance : ">
+					<font>
+						<Font name="System Bold" size="15.0" />
+					</font>
+				</Label>
+				<TextField fx:id="distanceView" layoutX="10.0" layoutY="524.0" prefHeight="25.0" prefWidth="147.0" />
+            <Button layoutX="10.0" layoutY="595.0" mnemonicParsing="false" onAction="#showPaths" prefHeight="25.0" prefWidth="90.0" text="All Paths" />
+            <Button layoutX="104.0" layoutY="595.0" mnemonicParsing="false" onAction="#hidePaths" prefWidth="90.0" text="Hide Paths" />
+            <Separator layoutX="15.0" layoutY="571.0" prefHeight="4.0" prefWidth="170.0" />
+            <Label layoutX="168.0" layoutY="528.0" text="km" />
+            <Label layoutX="40.0" layoutY="618.0" prefHeight="26.0" prefWidth="142.0" text="Mohammad Ihraiz - 1182599" textAlignment="CENTER">
+               <font>
+                  <Font name="Al-Jazeera-Arabic-Bold" size="10.0" />
+               </font>
+            </Label>
+			</children>
+		</AnchorPane>
+	</right>
+   <center>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <ScrollPane prefHeight="666.0" prefWidth="511.0">
+              <content>
+                <AnchorPane fx:id="pane" minHeight="0.0" minWidth="0.0" onMouseMoved="#mouseCoordinates" prefHeight="1285.0" prefWidth="741.0" style="-fx-background-color: dimgray;">
+                     <children>
+                        <ImageView fitHeight="1292.0" fitWidth="801.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../Map.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </ScrollPane>
+            <SplitPane dividerPositions="0.5" style="-fx-border-color: gray; -fx-border-width: 2;">
+               <items>
+                  <Label fx:id="coordinates" prefHeight="17.0" prefWidth="256.0" />
+                  <Label fx:id="showCity" prefHeight="17.0" prefWidth="239.0" />
+               </items>
+            </SplitPane>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
