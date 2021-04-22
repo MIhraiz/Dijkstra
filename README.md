@@ -1,7 +1,7 @@
 # Dijkstra
 Implementing Dijkstra algorithm on PALESTINE map to find the shortest path between two cities.
 
-JavaFx by: Yousef Hadidee
+JavaFx done by: Yousef Hadidee. Edited by: Mohammad Ihraiz
 
 Back-end by: Mohammad Ihraiz
 
